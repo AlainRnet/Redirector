@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2015 system. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+-->
+<extension type="plugin" version="3.0" group="system" method="upgrade">
+	<name>Redirector</name>
+	<author>Chupurnov Valeriy - AlainR</author>
+	<creationDate>Nov 2023</creationDate>
+	<copyright>© AlainR 2024 ; © 2023 system. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>redirector@artisanduweb.ch</authorEmail>
+	<authorUrl>https://www.artisan-du-web.ch</authorUrl>
+	<version>1.4.0</version>
+	<description>PLG_SYSTEM_REDIRECTOR_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="redirector">redirector.php</filename>
+		<folder>fields</folder>
+		<filename>index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="en-EN">en-EN.plg_system_redirector.ini</language>
+		<language tag="en-EN">en-EN.plg_system_redirector.sys.ini</language>
+		<language tag="fr-FR">fr-FR.plg_system_redirector.ini</language>
+		<language tag="fr-FR">fr-FR.plg_system_redirector.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/redirector/fields">
+			<fieldset name="basic">
+				<field
+                    name="link_to_link"
+                    type="texttolink"
+                    label="PLG_SYSTEM_REDIRECTOR_LINK_TO_LINK"
+                    description="Link to link"
+				/>
+				<field 
+					name="header"
+					type="list"
+					label="PLG_SYSTEM_REDIRECTOR_HEADER"
+					required="required"
+					default="HTTP/1.1 301 Moved Permanently"
+				>
+					<option value="HTTP/1.1 100 Continue">HTTP/1.1 100 Continue</option>
+					<option value="HTTP/1.1 101 Switching Protocols">HTTP/1.1 101 Switching Protocols</option>
+					<option value="HTTP/1.1 102 Processing">HTTP/1.1 102 Processing</option>
+					<option value="HTTP/1.1 200 OK">HTTP/1.1 200 OK</option>
+					<option value="HTTP/1.1 201 Created">HTTP/1.1 201 Created</option>
+					<option value="HTTP/1.1 202 Accepted">HTTP/1.1 202 Accepted</option>
+					<option value="HTTP/1.1 203 Non-Authoritative Information">HTTP/1.1 203 Non-Authoritative Information</option>
+					<option value="HTTP/1.1 204 No Content">HTTP/1.1 204 No Content</option>
+					<option value="HTTP/1.1 205 Reset Content">HTTP/1.1 205 Reset Content</option>
+					<option value="HTTP/1.1 206 Partial Content">HTTP/1.1 206 Partial Content</option>
+					<option value="HTTP/1.1 207 Multi-Status">HTTP/1.1 207 Multi-Status</option>
+					<option value="HTTP/1.1 208 Already Reported">HTTP/1.1 208 Already Reported</option>
+					<option value="HTTP/1.1 226 IM Used">HTTP/1.1 226 IM Used</option>
+					<option value="HTTP/1.1 300 Multiple Choices">HTTP/1.1 300 Multiple Choices</option>
+					<option value="HTTP/1.1 301 Moved Permanently">HTTP/1.1 301 Moved Permanently</option>
+					<option value="HTTP/1.1 302 Found">HTTP/1.1 302 Found</option>
+					<option value="HTTP/1.1 303 See other">HTTP/1.1 303 See other</option>
+					<option value="HTTP/1.1 304 Not Modified">HTTP/1.1 304 Not Modified</option>
+					<option value="HTTP/1.1 305 Use Proxy">HTTP/1.1 305 Use Proxy</option>
+					<option value="HTTP/1.1 306 (Unused)">HTTP/1.1 306 (Unused)</option>
+					<option value="HTTP/1.1 307 Temporary Redirect">HTTP/1.1 307 Temporary Redirect</option>
+					<option value="HTTP/1.1 308 Permanent Redirect">HTTP/1.1 308 Permanent Redirect</option>
+					<option value="HTTP/1.1 400 Bad Request">HTTP/1.1 400 Bad Request</option>
+					<option value="HTTP/1.1 401 Unauthorized">HTTP/1.1 401 Unauthorized</option>
+					<option value="HTTP/1.1 402 Payment Required">HTTP/1.1 402 Payment Required</option>
+					<option value="HTTP/1.1 403 Forbidden">HTTP/1.1 403 Forbidden</option>
+					<option value="HTTP/1.1 404 Not Found">HTTP/1.1 404 Not Found</option>
+					<option value="HTTP/1.1 405 Method Not Allowed">HTTP/1.1 405 Method Not Allowed</option>
+					<option value="HTTP/1.1 406 Not Acceptable">HTTP/1.1 406 Not Acceptable</option>
+					<option value="HTTP/1.1 407 Proxy Authentication Required">HTTP/1.1 407 Proxy Authentication Required</option>
+					<option value="HTTP/1.1 408 Request Timeout">HTTP/1.1 408 Request Timeout</option>
+					<option value="HTTP/1.1 409 Conflict">HTTP/1.1 409 Conflict</option>
+					<option value="HTTP/1.1 410 Gone">HTTP/1.1 410 Gone</option>
+					<option value="HTTP/1.1 411 Length Required">HTTP/1.1 411 Length Required</option>
+					<option value="HTTP/1.1 412 Precondition Failed">HTTP/1.1 412 Precondition Failed</option>
+					<option value="HTTP/1.1 413 Payload Too Large">HTTP/1.1 413 Payload Too Large</option>
+					<option value="HTTP/1.1 414 URI Too Long">HTTP/1.1 414 URI Too Long</option>
+					<option value="HTTP/1.1 415 Unsupported Media Type">HTTP/1.1 415 Unsupported Media Type</option>
+					<option value="HTTP/1.1 416 Requested Range Not Satisfiable">HTTP/1.1 416 Requested Range Not Satisfiable</option>
+					<option value="HTTP/1.1 417 Expectation Failed">HTTP/1.1 417 Expectation Failed</option>
+					<option value="HTTP/1.1 418 I'm a teapot">HTTP/1.1 418 I'm a teapot</option>
+					<option value="HTTP/1.1 422 Unprocessable Entity">HTTP/1.1 422 Unprocessable Entity</option>
+					<option value="HTTP/1.1 423 Locked">HTTP/1.1 423 Locked</option>
+					<option value="HTTP/1.1 424 Failed Dependency">HTTP/1.1 424 Failed Dependency</option>
+					<option value="HTTP/1.1 425 Reserved for WebDAV advanced collections expired proposal">HTTP/1.1 425 Reserved for WebDAV advanced collections expired proposal</option>
+					<option value="HTTP/1.1 426 Upgrade Required">HTTP/1.1 426 Upgrade Required</option>
+					<option value="HTTP/1.1 428 Precondition Required">HTTP/1.1 428 Precondition Required</option>
+					<option value="HTTP/1.1 429 Too Many Requests">HTTP/1.1 429 Too Many Requests</option>
+					<option value="HTTP/1.1 431 Request Header Fields Too Large">HTTP/1.1 431 Request Header Fields Too Large</option>
+					<option value="HTTP/1.1 500 Internal Server Error">HTTP/1.1 500 Internal Server Error</option>
+					<option value="HTTP/1.1 501 Not Implemented">HTTP/1.1 501 Not Implemented</option>
+					<option value="HTTP/1.1 502 Bad Gateway">HTTP/1.1 502 Bad Gateway</option>
+					<option value="HTTP/1.1 503 Service Unavailable">HTTP/1.1 503 Service Unavailable</option>
+					<option value="HTTP/1.1 504 Gateway Timeout">HTTP/1.1 504 Gateway Timeout</option>
+					<option value="HTTP/1.1 505 HTTP Version Not Supported">HTTP/1.1 505 HTTP Version Not Supported</option>
+					<option value="HTTP/1.1 506 Variant Also Negotiates (Experimental)">HTTP/1.1 506 Variant Also Negotiates (Experimental)</option>
+					<option value="HTTP/1.1 507 Insufficient Storage">HTTP/1.1 507 Insufficient Storage</option>
+					<option value="HTTP/1.1 508 Loop Detected">HTTP/1.1 508 Loop Detected</option>
+					<option value="HTTP/1.1 510 Not Extended">HTTP/1.1 510 Not Extended</option>
+					<option value="HTTP/1.1 511 Network Authentication Required">HTTP/1.1 511 Network Authentication Required</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<!--updateservers>
+		<server type="extension" priority="1" name="Компонент Яндекс карты">><![CDATA[http://xdan.ru/index.php?option=com_ars&view=update&task=stream&format=xml&id=3&dummy=extension.xml]]></server>
+	</updateservers-->
+</extension>
